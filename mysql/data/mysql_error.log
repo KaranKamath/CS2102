@@ -1,0 +1,73 @@
+130909  2:19:48 [Note] Plugin 'FEDERATED' is disabled.
+130909  2:19:48 InnoDB: The InnoDB memory heap is disabled
+130909  2:19:48 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+130909  2:19:48 InnoDB: Compressed tables use zlib 1.2.3
+130909  2:19:48 InnoDB: Initializing buffer pool, size = 16.0M
+130909  2:19:48 InnoDB: Completed initialization of buffer pool
+InnoDB: The first specified data file C:\xampp\mysql\data\ibdata1 did not exist:
+InnoDB: a new database to be created!
+130909  2:19:48  InnoDB: Setting file C:\xampp\mysql\data\ibdata1 size to 10 MB
+InnoDB: Database physically writes the file full: wait...
+130909  2:19:48  InnoDB: Log file C:\xampp\mysql\data\ib_logfile0 did not exist: new to be created
+InnoDB: Setting log file C:\xampp\mysql\data\ib_logfile0 size to 5 MB
+InnoDB: Database physically writes the file full: wait...
+130909  2:19:48  InnoDB: Log file C:\xampp\mysql\data\ib_logfile1 did not exist: new to be created
+InnoDB: Setting log file C:\xampp\mysql\data\ib_logfile1 size to 5 MB
+InnoDB: Database physically writes the file full: wait...
+InnoDB: Doublewrite buffer not found: creating new
+InnoDB: Doublewrite buffer created
+InnoDB: 127 rollback segment(s) active.
+InnoDB: Creating foreign key constraint system tables
+InnoDB: Foreign key constraint system tables created
+130909  2:19:49  InnoDB: Waiting for the background threads to start
+130909  2:19:50 InnoDB: 5.5.32 started; log sequence number 0
+130909  2:19:50 [Note] Server hostname (bind-address): '0.0.0.0'; port: 3306
+130909  2:19:50 [Note]   - '0.0.0.0' resolves to '0.0.0.0';
+130909  2:19:50 [Note] Server socket created on IP: '0.0.0.0'.
+130909  2:19:50 [Note] Event Scheduler: Loaded 0 events
+130909  2:19:50 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
+Version: '5.5.32'  socket: ''  port: 3306  MySQL Community Server (GPL)
+130911 16:42:42 [Note] Plugin 'FEDERATED' is disabled.
+130911 16:42:42 InnoDB: The InnoDB memory heap is disabled
+130911 16:42:42 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+130911 16:42:42 InnoDB: Compressed tables use zlib 1.2.3
+130911 16:42:42 InnoDB: Initializing buffer pool, size = 16.0M
+130911 16:42:42 InnoDB: Completed initialization of buffer pool
+130911 16:42:42 InnoDB: highest supported file format is Barracuda.
+InnoDB: The log sequence number in ibdata files does not match
+InnoDB: the log sequence number in the ib_logfiles!
+130911 16:42:42  InnoDB: Database was not shut down normally!
+InnoDB: Starting crash recovery.
+InnoDB: Reading tablespace information from the .ibd files...
+InnoDB: Restoring possible half-written data pages from the doublewrite
+InnoDB: buffer...
+130911 16:42:42  InnoDB: Waiting for the background threads to start
+130911 16:42:43 InnoDB: 5.5.32 started; log sequence number 1595675
+130911 16:42:43 [Note] Server hostname (bind-address): '0.0.0.0'; port: 3306
+130911 16:42:43 [Note]   - '0.0.0.0' resolves to '0.0.0.0';
+130911 16:42:43 [Note] Server socket created on IP: '0.0.0.0'.
+130911 16:42:44 [Note] Event Scheduler: Loaded 0 events
+130911 16:42:44 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
+Version: '5.5.32'  socket: ''  port: 3306  MySQL Community Server (GPL)
+131019 15:29:12 [Note] Plugin 'FEDERATED' is disabled.
+131019 15:29:13 InnoDB: The InnoDB memory heap is disabled
+131019 15:29:13 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+131019 15:29:13 InnoDB: Compressed tables use zlib 1.2.3
+131019 15:29:13 InnoDB: Initializing buffer pool, size = 16.0M
+131019 15:29:13 InnoDB: Completed initialization of buffer pool
+131019 15:29:13 InnoDB: highest supported file format is Barracuda.
+InnoDB: The log sequence number in ibdata files does not match
+InnoDB: the log sequence number in the ib_logfiles!
+131019 15:29:13  InnoDB: Database was not shut down normally!
+InnoDB: Starting crash recovery.
+InnoDB: Reading tablespace information from the .ibd files...
+InnoDB: Restoring possible half-written data pages from the doublewrite
+InnoDB: buffer...
+131019 15:29:15  InnoDB: Waiting for the background threads to start
+131019 15:29:16 InnoDB: 5.5.32 started; log sequence number 1595675
+131019 15:29:16 [Note] Server hostname (bind-address): '0.0.0.0'; port: 3306
+131019 15:29:16 [Note]   - '0.0.0.0' resolves to '0.0.0.0';
+131019 15:29:16 [Note] Server socket created on IP: '0.0.0.0'.
+131019 15:29:19 [Note] Event Scheduler: Loaded 0 events
+131019 15:29:19 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
+Version: '5.5.32'  socket: ''  port: 3306  MySQL Community Server (GPL)
