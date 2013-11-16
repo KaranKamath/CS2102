@@ -3808,3 +3808,4 @@ InnoDB: buffer...
 131116  0:15:32 [Note] Event Scheduler: Loaded 0 events
 131116  0:15:32 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
 Version: '5.5.32'  socket: ''  port: 3306  MySQL Community Server (GPL)
+131116 15:22:36 [Warning] IP address '61.234.245.162' could not be resolved: No such host is known. 
