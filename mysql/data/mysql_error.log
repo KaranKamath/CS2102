@@ -3810,3 +3810,26 @@ InnoDB: buffer...
 Version: '5.5.32'  socket: ''  port: 3306  MySQL Community Server (GPL)
 131116 15:22:36 [Warning] IP address '61.234.245.162' could not be resolved: No such host is known. 
 131117  2:07:48 [Warning] IP address '216.99.158.90' could not be resolved: No such host is known. 
+131117 16:02:06 [Note] Plugin 'FEDERATED' is disabled.
+131117 16:02:06 InnoDB: The InnoDB memory heap is disabled
+131117 16:02:06 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+131117 16:02:06 InnoDB: Compressed tables use zlib 1.2.3
+131117 16:02:06 InnoDB: Initializing buffer pool, size = 16.0M
+131117 16:02:06 InnoDB: Completed initialization of buffer pool
+131117 16:02:06 InnoDB: highest supported file format is Barracuda.
+InnoDB: The log sequence number in ibdata files does not match
+InnoDB: the log sequence number in the ib_logfiles!
+131117 16:02:06  InnoDB: Database was not shut down normally!
+InnoDB: Starting crash recovery.
+InnoDB: Reading tablespace information from the .ibd files...
+InnoDB: Restoring possible half-written data pages from the doublewrite
+InnoDB: buffer...
+131117 16:02:07  InnoDB: Waiting for the background threads to start
+131117 16:02:08 InnoDB: 5.5.32 started; log sequence number 1878273
+131117 16:02:08 [Note] Server hostname (bind-address): '0.0.0.0'; port: 3306
+131117 16:02:08 [Note]   - '0.0.0.0' resolves to '0.0.0.0';
+131117 16:02:08 [Note] Server socket created on IP: '0.0.0.0'.
+131117 16:02:08 [Note] Event Scheduler: Loaded 0 events
+131117 16:02:08 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
+Version: '5.5.32'  socket: ''  port: 3306  MySQL Community Server (GPL)
+131117 18:08:07 [Warning] IP address '61.234.245.162' could not be resolved: No such host is known. 
