@@ -1,3 +1,9 @@
+
+$('.progress .progress-bar').progressbar(); 
+
+$('#searchForm').hide();
+
+$('#pbar').show();
 var formData = {
 	from: "",
 	to: "",
@@ -84,6 +90,9 @@ $.ajax({
 		$.each(departureCities, function(){
 			$('#depCities').append($('<option>' + this + '</option>').val(this.toString()));
 		});	
+
+		$('#pbar').hide();
+		$('#searchForm').show();
 	}
 });
 
@@ -214,6 +223,10 @@ function updateFilters() {
 retFormData = {};
 $("#searchForm").on("submit", function(event) {
 	event.preventDefault();
+	$('.progress-bar').attr('aria-valuenow', '0');
+	$('.progress-bar').css('width', '0%');
+	$('#pbar').show();
+	$('.progress .progress-bar').progressbar();
 	$(this).hide();
 	formData["from"] = $("#depCities").val();
 	formData["to"] = $("#arrCities").val();
@@ -255,6 +268,7 @@ $("#searchForm").on("submit", function(event) {
 				//updateFilters();
 				/*$(".filters").show();*/
 			}
+			$('#pbar').hide();
 			$("#searchForm").removeClass("searchPos");
 			$("#searchForm").addClass("updatedSearchPos");	
 		}

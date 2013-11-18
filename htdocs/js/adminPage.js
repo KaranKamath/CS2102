@@ -4,6 +4,8 @@ var $delBookingButton = $("<button/>");
 $delBookingButton.attr({type: 'button', value: 'Delete Booking', class: 'btn btn-primary delButton', onclick: 'deleteAssBooking()'});
 $delBookingButton.append("Delete Booking");
 
+$('.progress .progress-bar').progressbar(); 
+
 $addFlightButton.attr({type: 'submit', value: 'Add New Flight', class: 'btn btn-primary'});
 var tableData = [];
 $logButton.attr({type: 'submit', class: 'btn btn-primary'});

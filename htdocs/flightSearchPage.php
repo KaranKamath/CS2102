@@ -1,6 +1,10 @@
 <?php include 'base.html'; ?>
 <div id = "outerContainer">
 	<div id  = "innerContainer" class = "row-fluid">
+		<div class="progress progress-striped active" id='pbar'>
+			<div class="progress-bar"  role="progressbar" aria-valuetransitiongoal = "100" aria-valuemin="0" aria-valuemax="100">
+			</div>
+		</div>
 		<form id = "searchForm" class = "text-center searchPos">
 			<fieldset>
 				<br/>
