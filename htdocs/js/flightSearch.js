@@ -232,6 +232,7 @@ $("#searchForm").on("submit", function(event) {
 	formData["to"] = $("#arrCities").val();
 	formData["seatClass"] = $("#seatClass").val();
 	formData["depDate"] = $("#depDate").val();
+	console.log(formData["depDate"]);
 	formData["numPeople"] = $("#numPeople").val();
 	if($('#priceOrder').is(':checked')) {
 		formData["priceOrder"] = "order";
@@ -254,6 +255,7 @@ $("#searchForm").on("submit", function(event) {
 			});
 		},
 		complete: function() {
+			console.log(tableData);
 			if(tableData.length===0) {
 				$('#innerContainer').append("<p class = 'text-danger'><strong>No flights found.</strong></p>");
 			} else {

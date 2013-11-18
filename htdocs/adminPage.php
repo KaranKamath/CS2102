@@ -6,9 +6,13 @@
 	</div>
 	<div id = "newFlightContainer" class = "row-fluid">
 	</div>
+	<div id = "changeBut" class = "row-fluid">
+		<button id = "changeFlightButton" type = "button" class = "btn btn-primary"
+		data-toggle = "modal" data-target = "#changeFlightDetails" value = "Change Flight Time">Change Flight Time</button>
+	</div>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="addFlightModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="changeFlightDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -18,18 +22,20 @@
 			<div id="formDiv" class="modal-body container">
 				<form id = "flightDetails">
 					<fieldset>
-						<label>Name: </label>
-						<input type="text" id="passName" name="passname" required/>
+						<label>Flight Number: </label>
+						<input type="text" id="flightNum" required/>
 						<br/><br/>
-						<label>Email: </label>
-						<input type="email" id="emailField" name="email_addr" required />
+						<label>Departure Details: </label>
+						<input type="datetime" id="oldDepDate" required />
 						<br/><br/>
-						<label>Contact Number: </label>
-						<input type="text" id="contact" name="contactno" pattern = "[0-9]{10}" required/>
+						<label>New Departure Details: </label>
+						<input type="datetime" id = "newDepDate" required/>
 						<br/>
-						<input type = "submit" value = "Book" class="btn btn-primary" id = "userFieldsSubmitButton"/>
+						<input type = "submit" value = "Change Time" class="btn btn-primary" id = "changeSubmitButton"/>
 					</fieldset>	
 				</form>
+			</div>
+			<div id = "changePane" class = "modal-body container">
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

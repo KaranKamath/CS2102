@@ -4,7 +4,13 @@ var $delBookingButton = $("<button/>");
 $delBookingButton.attr({type: 'button', value: 'Delete Booking', class: 'btn btn-primary delButton', onclick: 'deleteAssBooking()'});
 $delBookingButton.append("Delete Booking");
 
-$('.progress .progress-bar').progressbar(); 
+$('#changeBut').hide();
+$('#changeBut').click(function() {
+	$('#changePane').empty();
+	$('#flightNum').val('');
+	$('#newDepDate').val("");
+	$('#oldDepDate').val("");	
+});
 
 $addFlightButton.attr({type: 'submit', value: 'Add New Flight', class: 'btn btn-primary'});
 var tableData = [];
@@ -18,6 +24,7 @@ if($.cookie('admin') == undefined) {
 	$logButton.attr({value: 'Log In'});
 	
 } else {
+	$('#changeBut').show();
 	$('#innerContainer').empty();
 	$('#newFlightContainer').empty();
 	$logButton.attr({ value: 'Log Out'});
@@ -25,6 +32,30 @@ if($.cookie('admin') == undefined) {
 	buildTable();
 }
 $('#adminLogInForm').append($logButton);
+
+
+$('#flightDetails').on("submit", function(event) {
+	event.preventDefault();
+	var flightChangeRes = "";
+	var adminInput = {};
+	adminInput["flightNo"] = $('#flightNum').val().toString();
+	adminInput["oldDetails"] = $('#oldDepDate').val().toString();
+	adminInput["newDetails"] = $('#newDepDate').val().toString();
+	var uJson = JSON.stringify(adminInput);
+
+	console.log(uJson);
+	$.ajax({
+		type: "POST",
+		url: "changeFlightDetails.php",
+		data: {data: uJson},
+		success: function(data) {
+			flightChangeRes += data;
+		},
+		complete: function() {
+			$('#changePane').append("<p class = 'text-info'><strong>" + flightChangeRes + "</strong></p>");
+		}
+	});
+});
 
 $('#adminLogInForm').on('submit', function(event) {
 	event.preventDefault();
@@ -51,6 +82,7 @@ $('#adminLogInForm').on('submit', function(event) {
 					//$('#newFlightContainer').append($addFlightButton);	
 
 					$.cookie('admin', 'loggedIn');
+					$('#changeBut').show();
 					buildTable();
 				} else {
 					$('#innerContainer').empty();
@@ -60,6 +92,7 @@ $('#adminLogInForm').on('submit', function(event) {
 		});		
 		
 	} else {
+		$('#changeBut').hide();
 		$.removeCookie('admin');
 		$('#innerContainer').empty();
 		$('#adminLogInForm').empty();

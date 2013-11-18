@@ -15,8 +15,10 @@ $dateEnd = $date .' 23:59:59';
 $numPeople = $formData["numPeople"];
 
 if($formData["priceOrder"] == "noOrder") {
-	$queryResult = mysqli_query($con, "SELECT * FROM $flight_table f, $seat_table sOuter 
-		WHERE f.flight_no = sOuter.flight_no AND sOuter.seat_class = '$class' AND f.flight_no IN 
+	$queryResult = mysqli_query($con, "SELECT DISTINCT * FROM $flight_table f, $seat_table sOuter 
+		WHERE f.flight_no = sOuter.flight_no AND f.departure_details = sOuter.departure_details 
+		AND f.departure_details >= '$dateStart' AND f.departure_details < '$dateEnd' AND
+		sOuter.seat_class = '$class' AND f.flight_no IN 
 		(
 			SELECT flight_no FROM $seat_table s WHERE s.available_seats >= $numPeople
 			AND s.seat_class = '$class' AND s.flight_no IN 
@@ -27,8 +29,9 @@ if($formData["priceOrder"] == "noOrder") {
 				)
 	);") or die("An error occured");
 } else {
-	$queryResult = mysqli_query($con, "SELECT * FROM $flight_table f, $seat_table sOuter 
-		WHERE f.flight_no = sOuter.flight_no AND sOuter.seat_class = '$class' AND f.flight_no IN 
+	$queryResult = mysqli_query($con, "SELECT DISTINCT * FROM $flight_table f, $seat_table sOuter 
+		WHERE f.flight_no = sOuter.flight_no AND sOuter.seat_class = '$class' f.departure_details >= '$dateStart' AND f.departure_details < '$dateEnd'
+		AND f.flight_no IN 
 		(
 			SELECT flight_no FROM $seat_table s WHERE s.available_seats >= $numPeople
 			AND s.seat_class = '$class' AND s.flight_no IN 
