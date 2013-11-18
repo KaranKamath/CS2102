@@ -236,16 +236,20 @@ $("#searchForm").on("submit", function(event) {
 			});
 		},
 		complete: function() {
-			$("#resultsTable thead").remove();
-			$("#resultsTable tbody").remove();
-			$("#resultsTable").append("<thead><tr>" + printTableHead() +"</tr></thead><tbody>");
-			$.each(tableData, function() {
-				$("#resultsTable").append("<tr>" + printTupleData(this) +"</tr>");
-			});
-			$("#resultsTable").append("</tbody>");
-			
-			//updateFilters();
-			/*$(".filters").show();*/
+			if(tableData.length===0) {
+				$('#innerContainer').append("<p class = 'text-danger'><strong>No flights found.</strong></p>");
+			} else {
+				$("#resultsTable thead").remove();
+				$("#resultsTable tbody").remove();
+				$("#resultsTable").append("<thead><tr>" + printTableHead() +"</tr></thead><tbody>");
+				$.each(tableData, function() {
+					$("#resultsTable").append("<tr>" + printTupleData(this) +"</tr>");
+				});
+				$("#resultsTable").append("</tbody>");
+
+				//updateFilters();
+				/*$(".filters").show();*/
+			}
 			$("#searchForm").removeClass("searchPos");
 			$("#searchForm").addClass("updatedSearchPos");	
 		}
@@ -268,13 +272,17 @@ $("#searchForm").on("submit", function(event) {
 				});
 			},
 			complete: function() {
-				$("#returnResultsTable thead").remove();
-				$("#returnResultsTable tbody").remove();
-				$("#returnResultsTable").append("<thead><tr>" + printTableHead() +"</tr></thead><tbody>");
-				$.each(retTableData, function() {
-					$("#returnResultsTable").append("<tr>" + printTupleData(this) +"</tr>");
-				});
-				$("#returnResultsTable").append("</tbody>");
+				if(retTableData.length === 0) {
+					$('#innerContainer').append("<p class = 'text-danger'><strong>No  return flights found.</strong></p>");
+				} else {
+					$("#returnResultsTable thead").remove();
+					$("#returnResultsTable tbody").remove();
+					$("#returnResultsTable").append("<thead><tr>" + printTableHead() +"</tr></thead><tbody>");
+					$.each(retTableData, function() {
+						$("#returnResultsTable").append("<tr>" + printTupleData(this) +"</tr>");
+					});
+					$("#returnResultsTable").append("</tbody>");
+				}
 			}
 		});
 	}
