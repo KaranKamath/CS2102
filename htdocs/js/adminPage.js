@@ -1,6 +1,8 @@
 var $logButton = $("<input/>");
 var $addFlightButton = $("<input/>");
-var $delBookingButton = $("<input/>");
+var $delBookingButton = $("<button/>");
+$delBookingButton.attr({type: 'button', value: 'Delete Booking', class: 'btn btn-primary delButton', onclick: 'deleteAssBooking()'});
+$delBookingButton.append("Delete Booking");
 
 $addFlightButton.attr({type: 'submit', value: 'Add New Flight', class: 'btn btn-primary'});
 var tableData = [];
@@ -78,11 +80,16 @@ function buildTable(){
 		},
 		complete: function() {
 			console.log(tableData);
-			$("#innerContainer").append("<table id = 'bookingsTable' class = 'table'><thead></thead><tbody></tbody></table>");
-			addTableHeads();
-			$.each(tableData[0], function(){
-				$('#bookingsTable tbody').append("<tr>" + addTableData(this) + "</tr>");
-			});
+			if(tableData[0].length == 0) {
+				$("#innerContainer").append("<p class = 'info'><strong>No Bookings Found</strong></p>");
+			} else {
+				$("#innerContainer").append("<table id = 'bookingsTable' class = 'table'><thead></thead><tbody></tbody></table>");
+				addTableHeads();
+				$.each(tableData[0], function(){
+					$('#bookingsTable tbody').append("<tr>" + addTableData(this) + "</tr>");
+				});
+				$(".delButtonTD").append($delBookingButton);
+			}
 		}
 	});
 };
@@ -95,12 +102,47 @@ function addTableHeads() {
 
 function addTableData(data) {
 	var tuple = "";
-	tuple += "<td>"+ data["pnr"] +"</td>";
+	tuple += "<td class = 'pnrTD'>"+ data["pnr"] +"</td>";
 	tuple += "<td>"+ data["flight_no"] +"</td>";
 	tuple += "<td>"+ data["departure_details"] + "<br/>" + data["departure_destination"] +"</td>";
 	tuple += "<td>"+ data["arrival_details"] + "<br/>" + data["arrival_destination"] +"</td>";
 	tuple+="<td>"+ data["class_travel"] + "</td>";	
 	tuple+="<td>"+ data["no_people"] + "</td>";
 	tuple+="<td>"+ data["passenger_name"] + "<br/>" + data["email"] + "<br/>"+ data["contact_no"] + "</td>";
+	tuple+="<td class = 'delButtonTD'></td>";
 	return tuple;
 };
+
+function deleteAssBooking() {
+	var delData = {};
+	var currPNR = $(event.target).parent().parent().children("td:first")[0].innerHTML.toString();
+	var currFlight = $(event.target).parent().parent().children("td")[1].innerHTML.toString();
+	var depDetails = $(event.target).parent().parent().children("td")[2].innerHTML.toString().substr(0,19);
+	var seatClass = $(event.target).parent().parent().children("td")[4].innerHTML.toString();
+	var numPeople = $(event.target).parent().parent().children("td")[5].innerHTML.toString();
+	var delResponse = "";
+	delData["pnr"] = currPNR;
+	delData["flight"] = currFlight;
+	delData["depDetails"] = depDetails;
+	delData["seatClass"] = seatClass;
+	delData["numPeople"] = numPeople;
+	jsonData = JSON.stringify(delData);
+	
+	$(event.target).removeClass("delButton");
+	$(event.target).removeClass("btn-primary");
+	$(event.target).addClass("btn-danger");
+	$(event.target).removeAttr("onclick");
+	$(event.target).empty().append("Booking Deleted");
+
+	$.ajax({
+		type: "POST",
+		url: "deleteBooking.php",
+		data: {data : jsonData},
+		success: function(data) {
+			delResponse += data;
+		},
+		complete: function() {
+			$(event.target).parent().parent().children("td")[7].outerHTML="<p class = 'text-danger'><strong>" + delResponse + "</strong></p>";
+		}
+	});
+}
