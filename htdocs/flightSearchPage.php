@@ -6,17 +6,22 @@
 				<br/>
 				<div class = "row-fluid">
 					<label>Departure City: </label>
-					<select id = "depCities" name = "fromCity"></select>
+					<select id = "depCities" name = "fromCity" required></select>
 					<label>      Arrival City: </label>
-					<select id = "arrCities" name = "toCity"></select>
+					<select id = "arrCities" name = "toCity" required></select>
 					<label>Seat Class: </label>
-					<select id = "seatClass" name = "class">
+					<select id = "seatClass" name = "class" required>
 					</select> 
 					<label>Date of Departure:</label>
-					<input name = "departureDate" id = "depDate" type = "date"></input> 
+					<input name = "departureDate" id = "depDate" type = "date" required></input> 
 					<strong>1</strong><input name = "numPeople" id = "numPeople" type = "range" 
-					min = "1" max = "150" default = "1" onchange = "updateRangeValue();"></input><strong>150</strong>
-					<br/><strong>Selected Seats: <output id="numSelected">&nbsp;</output></strong>
+					min = "1" max = "150" default = "1" onchange = "updateRangeValue();" required></input><strong>150</strong>
+					<br/><span class = "pull right"><strong>Selected Seats: <output id="numSelected">&nbsp;</output></strong><span>
+					<br/><br/>
+					<input type = "radio" id = "returnOption"><strong>Return Flight</strong></input>
+					<br/><br/>
+					<label class = "returnForm">Date of Return:</label>
+					<input name = "returnDate" id = "retDate" class = "returnForm" type = "date"></input> 
 					<br/><br/>
 					<input class = "btn btn-primary" type = "submit" value = "Search for Flights"></input>
 				</div>
@@ -24,6 +29,8 @@
 		</form>
 		<br/>
 		<table id = "resultsTable" class = "table">
+		</table><br/>
+		<table id = "returnResultsTable" class = "table">
 		</table>
 		<br/>
 		<div class = "filters row-fluid text-center">

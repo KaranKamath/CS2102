@@ -18,8 +18,24 @@ $(".filters").hide();
 function setUp() {
 	$("#numPeople").val("1");
 };
+
 setUp();
 updateRangeValue();
+
+$('.returnForm').hide();
+$('#returnOption').click(function() {
+	updateReturnDate();
+	$('.returnForm').show();
+});
+
+$('#depDate').change(function() {
+	updateReturnDate();
+});
+
+function updateReturnDate() {
+	$('#retDate').attr('min', $('#depDate').val());
+	$('#retDate').val($('#depDate').val());		
+}
 
 function updateRangeValue() {
 	numSelected.innerHTML = numPeople.value;
@@ -34,7 +50,7 @@ var departureCities = [""];
 var arrivalCities = [""];
 var seatClasses = [""];
 var tableData = [];
-
+var retTableData = [];
 $.ajax({
 	type: "POST",
 	url: "/getColumn.php",
@@ -88,7 +104,7 @@ $.ajax({
 		});	
 	}
 });
-
+var currTable;
 function bookFlight(dataJSON) {
 	var bookResponse = "";
 	$.ajax({
@@ -99,11 +115,11 @@ function bookFlight(dataJSON) {
 			bookResponse += data; 
 		},
 		complete: function() {
-			$("#resultsTable").hide();
+			$(currTable).hide();
 			$("#searchForm").hide();
 			$("#filterTable").hide();
 			$("#filterButton").hide();
-			$("#innerContainer").append("<p>" + bookResponse + "</p>");
+			$("#innerContainer").append("<p>" + bookResponse + "</p><br/>");
 		}
 	});
 };
@@ -115,6 +131,7 @@ var seatClass;
 $(document).on("click", function() {
 	
 	if($(event.target).attr("class") != undefined && $(event.target).attr("class").indexOf("bookButton") != -1) {
+		currTable = "#" + $(event.target).closest('table').attr('id');
 		flightNum = $(event.target).closest('button').data('flightno');
 		departureDetails = $(event.target).closest('button').data('departure_details');
 		seatClass = $(event.target).closest('button').data('seat_class');
@@ -130,7 +147,6 @@ $(document).on("click", function() {
 $("#userDetails").on("submit", function(event) {
 	event.preventDefault();
 	$("#bookModal").modal("hide");
-
 	bookDetails["flightNo"] = flightNum;
 	bookDetails["departureTime"] = departureDetails
 	bookDetails["seatClass"] = seatClass;
@@ -143,6 +159,59 @@ $("#userDetails").on("submit", function(event) {
 	bookFlight(bookJSON);
 });
 
+function printTableHead() {
+	tuple = "";
+	tuple += ("<th>Flight Number</th>");
+	tuple += ("<th>From</th>");
+	tuple += ("<th>To</th>");
+	tuple += ("<th>Departure Date/Time</th>");
+	tuple += ("<th>Arrival Date/Time</th>");
+	tuple += ("<th>Airline</th>");
+	tuple += ("<th>Aircraft Model</th>");
+	tuple += ("<th>Price</th>");
+	tuple += ("<th>Book Option</th>");	
+	return tuple;
+};
+
+
+function printTupleData(data) {
+	tuple = "";
+	tuple += ("<td>" + data["flight_no"] + "</td>");
+	tuple += ("<td>" + data["departure_destination"] + "</td>");
+	tuple += ("<td>" + data["arrival_destination"] + "</td>");
+	tuple += ("<td>" + data["departure_details"] + "</td>");
+	tuple += ("<td>" + data["arrival_details"] + "</td>");
+	tuple += ("<td>" + data["carrier_name"] + "</td>");
+	tuple += ("<td>" + data["plane_model_no"] + "</td>");
+	tuple += ("<td>$" + data["price"] + "</td>");
+	tuple += ("<td><button data-toggle = 'modal' data-target = '#bookModal' class = 'btn btn-primary bookButton' data-flightNo = \"" 
+		+ data["flight_no"] + 
+		"\" data-departure_details = \"" + data["departure_details"] + "\" data-seat_class = \"" + 
+		data["seat_class"] + "\">Book Now</button></td>");
+	return tuple;
+};
+function updateFilters() {
+	$("#flightsFound label").remove();
+	flightFilter.length = 0;
+	$.ajax({
+		type: "POST",
+		url: "/getCarrierListAsQuery.php",
+		data: { data: JSON.stringify(formData)},
+		success: function(data) {
+
+			parsedData = $.parseJSON(data);
+			$.each(parsedData, function () {
+				flightFilter.push(this.toString());
+			});
+		},
+		complete: function() {
+			$.each(flightFilter, function(){
+				$("#flightsFound").append($("<label class='checkbox'><input type='checkbox' value='' checked>" + this + "</label>").val(this.toString()));
+			});	
+		}
+	});
+}
+retFormData = {};
 $("#searchForm").on("submit", function(event) {
 	event.preventDefault();
 	$(this).hide();
@@ -173,66 +242,40 @@ $("#searchForm").on("submit", function(event) {
 			$.each(tableData, function() {
 				$("#resultsTable").append("<tr>" + printTupleData(this) +"</tr>");
 			});
-			$("#resultsTable").append("</tbody");
-			function printTableHead() {
-				tuple = "";
-				tuple += ("<th>Flight Number</th>");
-				tuple += ("<th>From</th>");
-				tuple += ("<th>To</th>");
-				tuple += ("<th>Departure Date/Time</th>");
-				tuple += ("<th>Arrival Date/Time</th>");
-				tuple += ("<th>Airline</th>");
-				tuple += ("<th>Aircraft Model</th>");
-				tuple += ("<th>Price</th>");
-				tuple += ("<th>Book Option</th>");	
-				return tuple;
-			};
-
-
-			function printTupleData(data) {
-				tuple = "";
-				tuple += ("<td>" + data["flight_no"] + "</td>");
-				tuple += ("<td>" + data["departure_destination"] + "</td>");
-				tuple += ("<td>" + data["arrival_destination"] + "</td>");
-				tuple += ("<td>" + data["departure_details"] + "</td>");
-				tuple += ("<td>" + data["arrival_details"] + "</td>");
-				tuple += ("<td>" + data["carrier_name"] + "</td>");
-				tuple += ("<td>" + data["plane_model_no"] + "</td>");
-				tuple += ("<td>$" + data["price"] + "</td>");
-				tuple += ("<td><button data-toggle = 'modal' data-target = '#bookModal' class = 'btn btn-primary bookButton' data-flightNo = \"" 
-					+ data["flight_no"] + 
-					"\" data-departure_details = \"" + data["departure_details"] + "\" data-seat_class = \"" + 
-					data["seat_class"] + "\">Book Now</button></td>");
-				return tuple;
-			};
-			updateFilters();
-			$(".filters").show();
+			$("#resultsTable").append("</tbody>");
+			
+			//updateFilters();
+			/*$(".filters").show();*/
 			$("#searchForm").removeClass("searchPos");
 			$("#searchForm").addClass("updatedSearchPos");	
 		}
 	});
-
-function updateFilters() {
-	$("#flightsFound label").remove();
-	flightFilter.length = 0;
-	//console.log(formData);
-	$.ajax({
-		type: "POST",
-		url: "/getCarrierListAsQuery.php",
-		data: { data: JSON.stringify(formData)},
-		success: function(data) {
-			//console.log(data);
-			parsedData = $.parseJSON(data);
-			$.each(parsedData, function () {
-				flightFilter.push(this.toString());
-			});
-		},
-		complete: function() {
-			//console.log("returned filter: " + flightFilter);
-			$.each(flightFilter, function(){
-				$("#flightsFound").append($("<label class='checkbox'><input type='checkbox' value='' checked>" + this + "</label>").val(this.toString()));
-			});	
-		}
-	});
-}
+	if($('#retDate').val() !== "" && $('#returnOption').is(':checked')) {
+		retFormData["from"] = $("#arrCities").val();
+		retFormData["to"] = $("#depCities").val();
+		retFormData["seatClass"] = $("#seatClass").val();
+		retFormData["depDate"] = $("#retDate").val();
+		retFormData["numPeople"] = $("#numPeople").val();
+		var parsedRet;
+		$.ajax({
+			type: "POST",
+			url: "/searchForFlights.php",
+			data: { data: JSON.stringify(retFormData)},
+			success: function(data) {
+				parsedRet = $.parseJSON(data);
+				$.each(parsedRet, function() {
+					retTableData.push(this);
+				});
+			},
+			complete: function() {
+				$("#returnResultsTable thead").remove();
+				$("#returnResultsTable tbody").remove();
+				$("#returnResultsTable").append("<thead><tr>" + printTableHead() +"</tr></thead><tbody>");
+				$.each(retTableData, function() {
+					$("#returnResultsTable").append("<tr>" + printTupleData(this) +"</tr>");
+				});
+				$("#returnResultsTable").append("</tbody>");
+			}
+		});
+	}
 });
