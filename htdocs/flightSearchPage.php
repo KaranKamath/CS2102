@@ -14,9 +14,12 @@
 					</select> 
 					<label>Date of Departure:</label>
 					<input name = "departureDate" id = "depDate" type = "date" required></input> 
+					<br/><br/>
 					<strong>1</strong><input name = "numPeople" id = "numPeople" type = "range" 
 					min = "1" max = "150" default = "1" onchange = "updateRangeValue();" required></input><strong>150</strong>
 					<br/><span class = "pull right"><strong>Selected Seats: <output id="numSelected">&nbsp;</output></strong><span>
+					<br/><br/>
+					<input type = "radio" id = "priceOrder"><strong>Order By Price</strong></input>
 					<br/><br/>
 					<input type = "radio" id = "returnOption"><strong>Return Flight</strong></input>
 					<br/><br/>

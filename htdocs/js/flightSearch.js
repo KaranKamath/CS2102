@@ -220,7 +220,12 @@ $("#searchForm").on("submit", function(event) {
 	formData["seatClass"] = $("#seatClass").val();
 	formData["depDate"] = $("#depDate").val();
 	formData["numPeople"] = $("#numPeople").val();
-
+	if($('#priceOrder').is(':checked')) {
+		formData["priceOrder"] = "order";
+		//console.log("check");
+	} else {
+		formData["priceOrder"] = "noOrder";	
+	}
 	var formJSON = JSON.stringify(formData);
 	tableData.length = 0;
 	console.log(formJSON);
@@ -260,6 +265,11 @@ $("#searchForm").on("submit", function(event) {
 		retFormData["seatClass"] = $("#seatClass").val();
 		retFormData["depDate"] = $("#retDate").val();
 		retFormData["numPeople"] = $("#numPeople").val();
+		if($('#priceOrder').is(':checked')) {
+			retFormData["priceOrder"] = "order";
+		} else {
+			retFormData["priceOrder"] = "noOrder";	
+		}
 		var parsedRet;
 		$.ajax({
 			type: "POST",
