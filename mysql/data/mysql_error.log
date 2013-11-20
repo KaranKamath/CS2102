@@ -3921,3 +3921,147 @@ InnoDB: buffer...
 131118 21:59:39 [Note] Event Scheduler: Loaded 0 events
 131118 21:59:39 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
 Version: '5.5.32'  socket: ''  port: 3306  MySQL Community Server (GPL)
+131119  1:20:04 [Note] Plugin 'FEDERATED' is disabled.
+131119  1:20:04 InnoDB: The InnoDB memory heap is disabled
+131119  1:20:04 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+131119  1:20:04 InnoDB: Compressed tables use zlib 1.2.3
+131119  1:20:04 [Note] Plugin 'FEDERATED' is disabled.
+131119  1:20:04 InnoDB: The InnoDB memory heap is disabled
+131119  1:20:04 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+131119  1:20:04 InnoDB: Compressed tables use zlib 1.2.3
+131119  1:20:04 InnoDB: Initializing buffer pool, size = 16.0M
+131119  1:20:04 InnoDB: Completed initialization of buffer pool
+131119  1:20:04 InnoDB: Initializing buffer pool, size = 16.0M
+131119  1:20:04 InnoDB: Completed initialization of buffer pool
+131119  1:20:04  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+131119  1:20:04 InnoDB: highest supported file format is Barracuda.
+InnoDB: The log sequence number in ibdata files does not match
+InnoDB: the log sequence number in the ib_logfiles!
+131119  1:20:05  InnoDB: Database was not shut down normally!
+InnoDB: Starting crash recovery.
+InnoDB: Reading tablespace information from the .ibd files...
+InnoDB: Restoring possible half-written data pages from the doublewrite
+InnoDB: buffer...
+131119  1:20:06  InnoDB: Waiting for the background threads to start
+131119  1:20:07 InnoDB: 5.5.32 started; log sequence number 1968781
+131119  1:20:07 [Note] Server hostname (bind-address): '0.0.0.0'; port: 3306
+131119  1:20:07 [Note]   - '0.0.0.0' resolves to '0.0.0.0';
+131119  1:20:07 [Note] Server socket created on IP: '0.0.0.0'.
+131119  1:20:07 [Note] Event Scheduler: Loaded 0 events
+131119  1:20:07 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
+Version: '5.5.32'  socket: ''  port: 3306  MySQL Community Server (GPL)
+131119  1:20:14  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+131119  1:20:24  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+131119  1:20:34  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+131119  1:20:44  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+131119  1:20:54  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+131119  1:21:04  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+131119  1:21:11 [Note] Plugin 'FEDERATED' is disabled.
+131119  1:21:11 InnoDB: The InnoDB memory heap is disabled
+131119  1:21:11 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+131119  1:21:11 InnoDB: Compressed tables use zlib 1.2.3
+131119  1:21:11 InnoDB: Initializing buffer pool, size = 16.0M
+131119  1:21:11 InnoDB: Completed initialization of buffer pool
+131119  1:21:11 InnoDB: highest supported file format is Barracuda.
+InnoDB: The log sequence number in ibdata files does not match
+InnoDB: the log sequence number in the ib_logfiles!
+131119  1:21:11  InnoDB: Database was not shut down normally!
+InnoDB: Starting crash recovery.
+InnoDB: Reading tablespace information from the .ibd files...
+InnoDB: Restoring possible half-written data pages from the doublewrite
+InnoDB: buffer...
+131119  1:21:12  InnoDB: Waiting for the background threads to start
+131119  1:21:13 InnoDB: 5.5.32 started; log sequence number 1968791
+131119  1:21:13 [Note] Server hostname (bind-address): '0.0.0.0'; port: 3306
+131119  1:21:13 [Note]   - '0.0.0.0' resolves to '0.0.0.0';
+131119  1:21:13 [Note] Server socket created on IP: '0.0.0.0'.
+131119  1:21:13 [Note] Event Scheduler: Loaded 0 events
+131119  1:21:13 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
+Version: '5.5.32'  socket: ''  port: 3306  MySQL Community Server (GPL)
+131119 14:13:35 [Note] Plugin 'FEDERATED' is disabled.
+131119 14:13:35 InnoDB: The InnoDB memory heap is disabled
+131119 14:13:35 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+131119 14:13:35 InnoDB: Compressed tables use zlib 1.2.3
+131119 14:13:35 InnoDB: Initializing buffer pool, size = 16.0M
+131119 14:13:35 InnoDB: Completed initialization of buffer pool
+131119 14:13:35 InnoDB: highest supported file format is Barracuda.
+InnoDB: The log sequence number in ibdata files does not match
+InnoDB: the log sequence number in the ib_logfiles!
+131119 14:13:35  InnoDB: Database was not shut down normally!
+InnoDB: Starting crash recovery.
+InnoDB: Reading tablespace information from the .ibd files...
+InnoDB: Restoring possible half-written data pages from the doublewrite
+InnoDB: buffer...
+131119 14:13:38  InnoDB: Waiting for the background threads to start
+131119 14:13:39 InnoDB: 5.5.32 started; log sequence number 1975529
+131119 14:13:39 [Note] Server hostname (bind-address): '0.0.0.0'; port: 3306
+131119 14:13:39 [Note]   - '0.0.0.0' resolves to '0.0.0.0';
+131119 14:13:39 [Note] Server socket created on IP: '0.0.0.0'.
+131119 14:13:39 [Note] Event Scheduler: Loaded 0 events
+131119 14:13:39 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
+Version: '5.5.32'  socket: ''  port: 3306  MySQL Community Server (GPL)
+131120 15:55:23 [Note] Plugin 'FEDERATED' is disabled.
+131120 15:55:23 InnoDB: The InnoDB memory heap is disabled
+131120 15:55:23 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+131120 15:55:23 InnoDB: Compressed tables use zlib 1.2.3
+131120 15:55:23 InnoDB: Initializing buffer pool, size = 16.0M
+131120 15:55:23 InnoDB: Completed initialization of buffer pool
+131120 15:55:23 InnoDB: highest supported file format is Barracuda.
+InnoDB: The log sequence number in ibdata files does not match
+InnoDB: the log sequence number in the ib_logfiles!
+131120 15:55:23  InnoDB: Database was not shut down normally!
+InnoDB: Starting crash recovery.
+InnoDB: Reading tablespace information from the .ibd files...
+InnoDB: Restoring possible half-written data pages from the doublewrite
+InnoDB: buffer...
+131120 15:55:23  InnoDB: Waiting for the background threads to start
+131120 15:55:24 InnoDB: 5.5.32 started; log sequence number 1975539
+131120 15:55:24 [Note] Server hostname (bind-address): '0.0.0.0'; port: 3306
+131120 15:55:24 [Note]   - '0.0.0.0' resolves to '0.0.0.0';
+131120 15:55:24 [Note] Server socket created on IP: '0.0.0.0'.
+131120 15:55:24 [Note] Event Scheduler: Loaded 0 events
+131120 15:55:24 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
+Version: '5.5.32'  socket: ''  port: 3306  MySQL Community Server (GPL)
+131120 16:00:01 [Note] Plugin 'FEDERATED' is disabled.
+131120 16:00:01 InnoDB: The InnoDB memory heap is disabled
+131120 16:00:01 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+131120 16:00:01 InnoDB: Compressed tables use zlib 1.2.3
+131120 16:00:01 InnoDB: Initializing buffer pool, size = 16.0M
+131120 16:00:01 InnoDB: Completed initialization of buffer pool
+131120 16:00:01 InnoDB: highest supported file format is Barracuda.
+InnoDB: The log sequence number in ibdata files does not match
+InnoDB: the log sequence number in the ib_logfiles!
+131120 16:00:01  InnoDB: Database was not shut down normally!
+InnoDB: Starting crash recovery.
+InnoDB: Reading tablespace information from the .ibd files...
+InnoDB: Restoring possible half-written data pages from the doublewrite
+InnoDB: buffer...
+131120 16:00:01  InnoDB: Waiting for the background threads to start
+131120 16:00:02 InnoDB: 5.5.32 started; log sequence number 1975549
+131120 16:00:02 [Note] Server hostname (bind-address): '0.0.0.0'; port: 3306
+131120 16:00:02 [Note]   - '0.0.0.0' resolves to '0.0.0.0';
+131120 16:00:02 [Note] Server socket created on IP: '0.0.0.0'.
+131120 16:00:02 [Note] Event Scheduler: Loaded 0 events
+131120 16:00:02 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
+Version: '5.5.32'  socket: ''  port: 3306  MySQL Community Server (GPL)

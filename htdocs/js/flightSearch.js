@@ -248,7 +248,7 @@ $("#searchForm").on("submit", function(event) {
 		url: "/searchForFlights.php",
 		data: { data: formJSON },
 		success: function(data) {
-			//console.log(data);
+			console.log(data);
 			parsedResult = $.parseJSON(data);
 			$.each(parsedResult, function() {
 				tableData.push(this);
