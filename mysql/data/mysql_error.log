@@ -4065,3 +4065,47 @@ InnoDB: buffer...
 131120 16:00:02 [Note] Event Scheduler: Loaded 0 events
 131120 16:00:02 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
 Version: '5.5.32'  socket: ''  port: 3306  MySQL Community Server (GPL)
+131121  2:25:27 [Note] Plugin 'FEDERATED' is disabled.
+131121  2:25:27 InnoDB: The InnoDB memory heap is disabled
+131121  2:25:27 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+131121  2:25:27 InnoDB: Compressed tables use zlib 1.2.3
+131121  2:25:27 InnoDB: Initializing buffer pool, size = 16.0M
+131121  2:25:27 InnoDB: Completed initialization of buffer pool
+131121  2:25:27 InnoDB: highest supported file format is Barracuda.
+InnoDB: The log sequence number in ibdata files does not match
+InnoDB: the log sequence number in the ib_logfiles!
+131121  2:25:27  InnoDB: Database was not shut down normally!
+InnoDB: Starting crash recovery.
+InnoDB: Reading tablespace information from the .ibd files...
+InnoDB: Restoring possible half-written data pages from the doublewrite
+InnoDB: buffer...
+131121  2:25:27  InnoDB: Waiting for the background threads to start
+131121  2:25:28 InnoDB: 5.5.32 started; log sequence number 1981742
+131121  2:25:28 [Note] Server hostname (bind-address): '0.0.0.0'; port: 3306
+131121  2:25:28 [Note]   - '0.0.0.0' resolves to '0.0.0.0';
+131121  2:25:28 [Note] Server socket created on IP: '0.0.0.0'.
+131121  2:25:28 [Note] Event Scheduler: Loaded 0 events
+131121  2:25:28 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
+Version: '5.5.32'  socket: ''  port: 3306  MySQL Community Server (GPL)
+131121 10:46:45 [Note] Plugin 'FEDERATED' is disabled.
+131121 10:46:45 InnoDB: The InnoDB memory heap is disabled
+131121 10:46:45 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+131121 10:46:45 InnoDB: Compressed tables use zlib 1.2.3
+131121 10:46:46 InnoDB: Initializing buffer pool, size = 16.0M
+131121 10:46:46 InnoDB: Completed initialization of buffer pool
+131121 10:46:46 InnoDB: highest supported file format is Barracuda.
+InnoDB: The log sequence number in ibdata files does not match
+InnoDB: the log sequence number in the ib_logfiles!
+131121 10:46:46  InnoDB: Database was not shut down normally!
+InnoDB: Starting crash recovery.
+InnoDB: Reading tablespace information from the .ibd files...
+InnoDB: Restoring possible half-written data pages from the doublewrite
+InnoDB: buffer...
+131121 10:46:52  InnoDB: Waiting for the background threads to start
+131121 10:46:53 InnoDB: 5.5.32 started; log sequence number 1981752
+131121 10:46:53 [Note] Server hostname (bind-address): '0.0.0.0'; port: 3306
+131121 10:46:53 [Note]   - '0.0.0.0' resolves to '0.0.0.0';
+131121 10:46:53 [Note] Server socket created on IP: '0.0.0.0'.
+131121 10:46:53 [Note] Event Scheduler: Loaded 0 events
+131121 10:46:53 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
+Version: '5.5.32'  socket: ''  port: 3306  MySQL Community Server (GPL)

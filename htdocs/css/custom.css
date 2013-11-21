@@ -1,7 +1,12 @@
 #pbar {margin-top: 20em}
+
 #outerContainer { position:relative }
+
 .newSearchPos { position:relative}
+
 .searchPos { position:absolute; top:10%; height:10em; margin-top: 10em;}
+
 .formRetrieve{ position:absolute; top:50%; height:10em; margin-top: 10em; padding-left: 15em}
+
 #filters { visibility: hidden;}
 td, th {padding-left:5em}
